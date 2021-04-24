@@ -1,0 +1,12 @@
+<div class="card bg-dark text-light mb-4" style="width: 18rem;">
+    <img src="{{article?.photoURL || '../../../../assets/noimage.jpg'}}" class="card-img-top" alt="{{article.title}}">
+    <span class="badge badge-info">{{article.category.name}}</span>
+    <div class="card-body">
+      <p class="card-title">{{article.title}}</p>
+      <div class="buttons d-flex justify-content-space-between">
+        <a [routerLink] = "['article', article.articleID]" class="btn btn-success">Detaljnije</a>
+        <a class="btn btn-outline-warning" [routerLink]="['edit', article.articleID]">Izmeni</a>
+        <a class="btn btn-outline-danger" (click)="deleteThisArticle()">Obriši</a>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,10 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 text-center">Moj fpis blog</h1>
+    </div>
+</div>
+
+<div class="container d-flex">
+    <app-single-article *ngFor="let article of articles" [article]="article" 
+                        (deleteArticleEvent)="deleteArticle($event)"></app-single-article>
+</div>

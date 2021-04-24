@@ -1,0 +1,14 @@
+.buttons{
+    justify-content: space-between;
+}
+
+.card-img-top{
+    height: 150px;
+    width: auto;
+}
+
+.badge{
+    position: absolute;
+    top: 125px;
+    left: 10px;
+}

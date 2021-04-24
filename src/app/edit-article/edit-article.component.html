@@ -1,0 +1,38 @@
+<div class="jumbotron jumbotron-fluid mb-1"
+    [ngStyle]="{'background': 'radial-gradient(rgba(0, 43, 54, 0.2), rgba(0, 43, 54, 0.90)), #fff url('+ article.photoURL +') no-repeat center 50%/cover'}">
+    <div class="container">
+      <h1 class="display-4 text-center text-light">{{article.title}}</h1>
+    </div>
+</div>
+
+<div class="container">
+  <div class="categories mb-4">
+    <h5><span class="badge badge-info">{{article.category.name}}</span></h5>
+  </div>
+
+    <form (ngSubmit)="updateArticle()" #insertForm = "ngForm" [ngFormOptions]="{updateOn: 'blur'}">
+        <div class="form-group">
+            <label for="title">Naslov</label>
+            <input name="title" type="text" [(ngModel)]="article.title" class="form-control" placeholder="Unesite naslov članka">
+        </div>
+        <div class="form-group">
+            <label for="photoURL">Fotografija</label>
+            <input name="photoURL" type="text" [(ngModel)]="article.photoURL" class="form-control" placeholder="Unesite url fotografije">
+        </div>
+        <div class="form-group">
+            <label for="article.category.categoryID">Kategorija</label>
+            <select id="category" name="article.category.categoryID" [(ngModel)]="article.category.categoryID" class="form-control">
+              <option *ngFor="let category of categories" [value]="category.categoryID">{{category.name}}</option>
+            </select>
+          </div>
+        <div class="form-group">
+            <label for="content">Sadržaj</label>
+            <textarea  name="content" [(ngModel)]="article.content" class="form-control" placeholder="Unesite sadržaj članka">
+            </textarea>
+        </div>
+        <div class="buttons d-flex justify-space-between">
+            <button type="button" class="btn btn-warning" (click)="reset()">Odustani</button>
+            <button type="submit" class="btn btn-success">Izmeni članak</button>
+        </div>
+    </form>
+</div>

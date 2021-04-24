@@ -1,0 +1,12 @@
+.container{
+    margin-top: 70px;
+    width: 50%;
+}
+
+.buttons{
+    justify-content: space-between;
+}
+
+.btn{
+    width: 30%;
+}
